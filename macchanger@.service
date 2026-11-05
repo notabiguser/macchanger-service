@@ -1,0 +1,13 @@
+[Unit]
+Description=Randomize MAC address for %i
+Wants=network-pre.target
+Before=network-pre.target
+BindsTo=sys-subsystem-net-devices-%i.device
+After=sys-subsystem-net-devices-%i.device
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/macchanger --random %i
+
+[Install]
+WantedBy=multi-user.target
