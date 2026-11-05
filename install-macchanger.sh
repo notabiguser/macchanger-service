@@ -5,8 +5,8 @@
 
 set -euo pipefail
 
-# Specific network interface:
-INTERFACE="wlan0"
+# Specific network interface (default: wlan0):
+INTERFACE="${1:-wlan0}"
 
 sudo install -m 644 ./macchanger@.service /etc/systemd/system/
 sudo systemctl daemon-reload
