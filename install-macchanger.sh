@@ -10,8 +10,6 @@ INTERFACE="${1:-wlan0}"
 
 sudo install -m 644 ./macchanger@.service /etc/systemd/system/
 sudo systemctl daemon-reload
-sudo ip link set dev "$INTERFACE" down
 sudo systemctl enable --now macchanger@"$INTERFACE".service
-sudo ip link set dev "$INTERFACE" up
 macchanger --show "$INTERFACE"
 

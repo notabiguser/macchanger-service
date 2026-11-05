@@ -7,7 +7,9 @@ After=sys-subsystem-net-devices-%i.device
 
 [Service]
 Type=oneshot
+ExecStartPre=/usr/bin/ip link set dev %i down
 ExecStart=/usr/bin/macchanger --random %i
+ExecStopPost=/usr/bin/ip link set dev %i up
 
 [Install]
 WantedBy=multi-user.target
