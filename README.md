@@ -39,7 +39,7 @@ macchanger --show wlan0
 Turn the service on for one more interface. Write its name after `@`:
 
 ```bash
-sudo systemctl enable macchanger@wlp3s0.service
+sudo systemctl enable --now macchanger@wlp3s0.service
 ```
 
 ## Notes
