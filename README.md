@@ -7,7 +7,7 @@ A simple systemd service for randomizing the MAC address of a specific network i
 - `systemd`
 - `sudo`
 - `ip`
-- `macchanger` `https://github.com/alobbs/macchanger`
+- [`macchanger`](https://github.com/alobbs/macchanger)
 
 ## Installation
 
