@@ -3,7 +3,7 @@
 # MAC Randomizer
 # Read README.md for more information.
 
-set -e
+set -euo pipefail
 
 # Specific network interface:
 INTERFACE="wlan0"
