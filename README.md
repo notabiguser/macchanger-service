@@ -16,18 +16,30 @@ chmod u+x ./install-macchanger.sh
 ./install-macchanger.sh
 ```
 
-## Usage
-
-Write the network interface name after `@`, e.g., `wlan0`:
+By default, the script uses `wlan0`. For another interface, pass the name as an argument:
 
 ```bash
-sudo systemctl enable --now macchanger@wlan0.service
+./install-macchanger.sh wlp3s0
+```
+
+## Usage
+
+To get a new random MAC address:
+
+```bash
+./install-macchanger.sh
 ```
 
 Check the current and permanent MAC addresses:
 
 ```bash
 macchanger --show wlan0
+```
+
+Turn the service on for one more interface. Write its name after `@`:
+
+```bash
+sudo systemctl enable macchanger@wlp3s0.service
 ```
 
 ## Notes
@@ -40,10 +52,9 @@ Installation path: `/etc/systemd/system/`
 ExecStart=/usr/bin/macchanger --ending %i
 ```
 
-Then reload systemd and restart the service:
+Then run install-macchanger:
 
 ```bash
-sudo systemctl daemon-reload
-sudo systemctl restart macchanger@wlan0.service
+./install-macchanger.sh
 ```
 
